@@ -2,9 +2,9 @@
 name=$(cat ./name.txt)
 cookie=$(cat ./cookie.txt)
 # 1. 先克隆仓库
-git clone git@github.com:Sympath/kkb-download.git $name
+git clone git@github.com:Sympath/kkb-download.git repo
 # 2. 切换进根目录
-cd $name
+cd repo
 # 3. 生成配置文件
 echo "module.exports = {
     cookies: '${cookie}'

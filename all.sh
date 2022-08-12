@@ -1,8 +1,12 @@
 #!/bin/bash
+# 百度云盘最外层目录名
 name=$(cat ./name.txt)
+# 登陆cookie
 cookie=$(cat ./cookie.txt)
+if [ ! -d "/repo" ]; then
 # 1. 先克隆仓库
 git clone git@github.com:Sympath/kkb-download.git repo
+fi
 # 2. 切换进根目录
 cd repo
 # 3. 生成配置文件

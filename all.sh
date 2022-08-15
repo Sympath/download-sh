@@ -11,7 +11,7 @@ fi
 cd repo
 # 3. 生成配置文件
 echo "module.exports = {
-    cookies: '${cookie}'
+    cookies: ${cookie}
 }" > config/cjs-index.js
 echo "
 import path from 'path';
@@ -41,3 +41,4 @@ npm run build2
 npm run build
 npm run build3
 npm run build4-linux
+echo '所有课程下载完成'

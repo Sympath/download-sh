@@ -8,9 +8,8 @@ if [ ! -d "/repo" ]; then
 git clone git@github.com:Sympath/kkb-download.git repo
 fi
 # 2. 切换进根目录
-echo '切换进根目录' 
 cd repo
-echo '生成配置文件' 
+echo '1. 切换进根目录完成' 
 # 3. 生成配置文件
 echo "module.exports = {
     cookies: ${cookie}
@@ -31,22 +30,23 @@ for (const key of ctx.keys()) {
 export const bdypDir = '${name}' // 在百度云盘上对应的文件夹名称
 export default modules
 " > config/index.js
+echo '2. 生成配置文件完成' 
 # 安装依赖
-echo '安装依赖' 
-npm install
+npm run install-linux
+echo '3. 安装依赖完成' 
 # 开始爬虫生成配置目录
-echo '开始爬虫生成配置目录'
 npm run formatConfig
+echo '4. 爬虫生成配置目录完成'
 # 启动
-echo '启动 ======'
+echo '5. 启动 ======'
 npm run build
 npm run build1
-echo '生成静态资源目录完成'
+echo '5.1 生成静态资源目录完成'
 npm run build
 npm run build2
-echo '生成下载脚本完成'
+echo '5.2 生成下载脚本完成'
 npm run build
 npm run build3
-echo '开始执行脚本'
+echo '5.3 开始执行脚本'
 npm run build4-linux
-echo '所有课程下载完成'
+echo '5.4 所有课程下载完成'

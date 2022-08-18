@@ -1,8 +1,7 @@
 #!/bin/bash
-# 百度云盘最外层目录名
-name=$(cat ./name.txt)
-# 登陆cookie
-cookie=$(cat ./cookie.txt)
+# name 百度云盘最外层目录名
+# cookie 登陆cookie
+source config
 if [ ! -d "/repo" ]; then
 # 1. 先克隆仓库
 git clone git@github.com:Sympath/kkb-download.git repo
@@ -12,7 +11,8 @@ cd repo
 echo '1. 切换进根目录完成' 
 # 3. 生成配置文件
 echo "module.exports = {
-    cookies: ${cookie}
+    cookies: ${cookie},
+    courseIds: ${courseIds},
 }" > config/cjs-index.js
 echo "
 import path from 'path';

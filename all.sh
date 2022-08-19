@@ -1,7 +1,9 @@
 #!/bin/bash
 # name 百度云盘最外层目录名
 # cookie 登陆cookie
-source config
+while read line;do
+    eval "$line"
+done < config
 if [ ! -d "/repo" ]; then
 # 1. 先克隆仓库
 git clone git@github.com:Sympath/kkb-download.git repo

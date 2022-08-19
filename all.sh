@@ -13,8 +13,8 @@ cd repo
 echo '1. 切换进根目录完成' 
 # 3. 生成配置文件
 echo "module.exports = {
-    cookies: ${cookie},
-    courseIds: ${courseIds},
+    cookies: "${cookie}",
+    courseIds: "${courseIds}",
 }" > config/cjs-index.js
 echo "
 import path from 'path';

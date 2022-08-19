@@ -34,7 +34,7 @@ for (const key of ctx.keys()) {
 export const bdypDir = '${name}' // 在百度云盘上对应的文件夹名称
 export default modules
 " > config/index.js
-echo '2. 生成配置文件完成' 
+echo '2. 生成配置文件完成'
 # 安装依赖
 npm run install-linux
 echo '3. 安装依赖完成' 

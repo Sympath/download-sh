@@ -1,23 +1,24 @@
 #!/bin/bash
 # name 百度云盘最外层目录名
 # cookie 登陆cookie
-while read line;do
+while read line; do
     eval "$line"
-done < config
+done <config
 if [ ! -d "/repo" ]; then
-# 1. 先克隆仓库
-git clone git@github.com:Sympath/kkb-download.git repo
+    # 1. 先克隆仓库
+    git clone git@github.com:Sympath/kkb-download.git repo
 fi
 # 2. 切换进根目录
 cd repo
 echo "生成result.js"
 touch result.js
-echo '1. 切换进根目录完成' 
+echo '1. 切换进根目录完成'
 # 3. 生成配置文件
 echo "module.exports = {
     cookies: "${cookie}",
     courseIds: '${courseIds}',
-}" > config/cjs-index.js
+    bdypDir: '${name}',
+}" >config/cjs-index.js
 echo "
 import path from 'path';
 // import nodeApi from '../utils/node-api.js';
@@ -33,11 +34,11 @@ for (const key of ctx.keys()) {
 // 配置 2
 export const bdypDir = '${name}' // 在百度云盘上对应的文件夹名称
 export default modules
-" > config/index.js
+" >config/index.js
 echo '2. 生成配置文件完成'
 # 安装依赖
 npm run install-linux
-echo '3. 安装依赖完成' 
+echo '3. 安装依赖完成'
 # 开始爬虫生成配置目录
 npm run formatConfig
 echo '4. 爬虫生成配置目录完成'

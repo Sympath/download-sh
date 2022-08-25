@@ -48,12 +48,12 @@ echo '4. 爬虫生成配置目录完成'
 echo '5. 启动 ======'
 npm run build
 npm run build1
-echo '5.1 生成静态资源目录完成'
-npm run build
-npm run build2
-echo '5.2 生成下载脚本完成'
-npm run build
-npm run build3
-echo '5.3 开始执行脚本'
-npm run build4-linux
-echo '5.4 所有课程下载完成'
+# echo '5.1 生成静态资源目录完成'
+# npm run build
+# npm run build2
+# echo '5.2 生成下载脚本完成'
+# npm run build
+# npm run build3
+# echo '5.3 开始执行脚本'
+# npm run build4-linux
+# echo '5.4 所有课程下载完成'

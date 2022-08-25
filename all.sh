@@ -15,10 +15,10 @@ touch result.js
 echo '1. 切换进根目录完成'
 # 3. 生成配置文件
 echo "
-let courseIds = ('${courseIds}').split(',');
+// let courseIds = ('${courseIds}').split(',');
 module.exports = {
     cookies: "${cookie}",
-    courseIds,
+    courseIds: '${courseIds}',
     bdypDir: '${name}',
 }" >config/cjs-index.js
 echo "

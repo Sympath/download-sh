@@ -47,7 +47,7 @@ npm run formatConfig
 echo '4. 爬虫生成配置目录完成'
 # 启动
 echo '5. 启动 ======'
-npm run run-linux
+npm run run
 echo '下载课件目录完成 ====== 执行视频下载任务完成'
 
 # echo '5.1 生成静态资源目录完成'

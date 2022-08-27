@@ -14,6 +14,7 @@ echo "生成result.js"
 touch result.js
 echo '1. 切换进根目录完成'
 # 3. 生成配置文件
+mkdir config
 echo "
 // let courseIds = ('${courseIds}').split(',');
 module.exports = {

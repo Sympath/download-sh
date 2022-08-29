@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "all": "sudo chmod 777 ./all.sh && nohup sh ./all.sh 1>./shell-logs/all.log 2>./shell-logs/all_err.log &",
-    "config-retry": "sudo chmod 777 ./config-retry.sh && nohup sh ./config-retry.sh 1>./shell-logs/config-retry.log 2>./shell-logs/config-retry_err.log &"
+    "all": "chmod 777 ./all.sh && nohup sh ./all.sh 1>./shell-logs/all.log 2>./shell-logs/all_err.log &",
+    "config-retry": "chmod 777 ./config-retry.sh && nohup sh ./config-retry.sh 1>./shell-logs/config-retry.log 2>./shell-logs/config-retry_err.log &"
   },
   "repository": {
     "type": "git",

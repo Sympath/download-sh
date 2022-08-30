@@ -10,19 +10,20 @@ if [ ! -d "/repo" ]; then
 fi
 # 2. 切换进根目录
 cd repo
-echo "生成result.js"
-touch result.js
 echo '1. 切换进根目录完成'
 # 3. 生成配置文件
 mkdir config
-echo "
+
+cat >config/cjs-index.js <<EOF
 // let courseIds = ('${courseIds}').split(',');
 module.exports = {
     cookies: "${cookie}",
     courseIds: '${courseIds}',
     bdypDir: '${name}',
-}" >config/cjs-index.js
-echo "
+}
+EOF
+
+cat >config/index.js <<EOF
 import path from 'path';
 // import nodeApi from '../utils/node-api.js';
 // let configObj = nodeApi.getFileExportObjInDir('/Users/wzyan/Documents/selfspace/ffmpeg-download/config/3')
@@ -37,7 +38,7 @@ for (const key of ctx.keys()) {
 // 配置 2
 export const bdypDir = '${name}' // 在百度云盘上对应的文件夹名称
 export default modules
-" >config/index.js
+EOF
 echo '2. 生成配置文件完成'
 # 安装依赖
 npm run install-linux

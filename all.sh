@@ -15,9 +15,8 @@ echo '1. 切换进根目录完成'
 mkdir config
 
 cat >config/cjs-index.js <<EOF
-// let courseIds = ('${courseIds}').split(',');
 module.exports = {
-    cookies: "${cookie}",
+    cookies: ${cookie},
     courseIds: '${courseIds}',
     bdypDir: '${name}',
 }

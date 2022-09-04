@@ -41,7 +41,15 @@ export default modules
 EOF
 echo '2. 生成配置文件完成'
 # 安装依赖
-npm run install-linux
+if [[ $(uname) == 'Darwin' ]]; then
+    echo "Mac OS"
+    npm install
+fi
+
+if [[ $(uname) == 'Linux' ]]; then
+    echo "Linux"
+    npm run install-linux
+fi
 echo '3. 安装依赖完成'
 # 开始爬虫生成配置目录
 npm run formatConfig

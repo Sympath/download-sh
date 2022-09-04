@@ -19,6 +19,7 @@ module.exports = {
     cookies: ${cookie},
     courseIds: '${courseIds}',
     bdypDir: '${name}',
+    donwType: '${donwType}' // down-all 下载所有 down-single 下载单个视频 down-courseIds 下载指定课程 config-retry 不删除，只生成配置文件后重启（会保留生成的课程配置）
 }
 EOF
 

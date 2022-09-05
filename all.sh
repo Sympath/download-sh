@@ -4,12 +4,19 @@
 while read line; do
     eval "$line"
 done <config
-if [ ! -d "/repo" ]; then
-    # 1. 先克隆仓库
-    git clone git@github.com:Sympath/kkb-download.git repo
+if [[ $(uname) == 'Darwin' ]]; then
+    echo "Mac OS"
+    cd /Users/wzyan/Documents/selfspace/kkb-down/kkb-down-core
 fi
-# 2. 切换进根目录
-cd repo
+if [[ $(uname) == 'Linux' ]]; then
+    echo "Linux"
+    if [ ! -d "/repo" ]; then
+        # 1. 先克隆仓库
+        git clone git@github.com:Sympath/kkb-download.git repo
+    fi
+    # 2. 切换进根目录
+    cd repo
+fi
 echo '1. 切换进根目录完成'
 # 3. 生成配置文件
 mkdir config
@@ -41,16 +48,11 @@ export default modules
 EOF
 echo '2. 生成配置文件完成'
 # 安装依赖
-if [[ $(uname) == 'Darwin' ]]; then
-    echo "Mac OS"
-    npm install
+if [[ $(uname) == 'Linux' ]]; then
+    npm run install-linux
+    echo '3. 安装依赖完成'
 fi
 
-if [[ $(uname) == 'Linux' ]]; then
-    echo "Linux"
-    npm run install-linux
-fi
-echo '3. 安装依赖完成'
 # 开始爬虫生成配置目录
 npm run formatConfig
 echo '4. 爬虫生成配置目录完成'

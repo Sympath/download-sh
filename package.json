@@ -6,6 +6,7 @@
   "scripts": {
     "all": "chmod 777 ./all.sh && nohup sh ./all.sh 1>./shell-logs/all.log 2>./shell-logs/all_err.log &",
     "xiaoet-all": "chmod 777 ./xiaoet-all.sh && nohup sh ./xiaoet-all.sh 1>./shell-logs/xiaoet-all.log 2>./shell-logs/xiaoet-all_err.log &",
+    "courseware-all": "chmod 777 ./courseware-all.sh && nohup sh ./courseware-all.sh 1>./shell-logs/courseware-all.log 2>./shell-logs/courseware-all_err.log &",
     "config-retry": "chmod 777 ./config-retry.sh && nohup sh ./config-retry.sh 1>./shell-logs/config-retry.log 2>./shell-logs/config-retry_err.log &"
   },
   "repository": {
